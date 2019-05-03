@@ -1,6 +1,6 @@
 {
   "name": "@collaveinc/folder-to-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "Requires all folder contents into an object.",
   "main": "lib/index.js",
