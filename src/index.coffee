@@ -9,7 +9,6 @@ handleFiles = (dir, files) ->
   object = {}
   for file in files
     parsed = parse file
-    console.log relative(dir, parsed.dir)
     tokens = relative(dir, parsed.dir).split sep
 
     currentObject = object
