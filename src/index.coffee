@@ -1,6 +1,6 @@
 
 fg = require 'fast-glob'
-{ relative, join, parse } = require 'path'
+{ relative, join, parse, sep } = require 'path'
 
 defaults =
   extensions: ['js', 'ts', 'coffee', 'json']
@@ -9,12 +9,13 @@ handleFiles = (dir, files) ->
   object = {}
   for file in files
     parsed = parse file
-    tokens = relative(parsed.dir, dir).split('/')
+    console.log relative(dir, parsed.dir)
+    tokens = relative(dir, parsed.dir).split sep
 
     currentObject = object
     for token in tokens
       continue unless token
-      currentObject = object[token] ?= {}
+      currentObject = currentObject[token] ?= {}
 
     currentObject[parsed.name] = require join process.cwd(), file
 
