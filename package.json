@@ -1,13 +1,13 @@
 {
   "name": "@collaveinc/folder-to-object",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "private": false,
   "description": "Requires all folder contents into an object.",
   "main": "lib/index.js",
   "scripts": {
-    "compile": "coffee --compile --output lib src",
+    "build": "coffee --compile --output lib src",
     "dev": "coffee tests/index.coffee",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "coffee tests/index.coffee"
   },
   "author": "Andrew Alegre (andrew.alegre@collave.com)",
   "license": "ISC",

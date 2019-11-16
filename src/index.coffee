@@ -26,10 +26,10 @@ handleOpts = (opts) ->
 
 sync = (opts) ->
   { dir, extensions = defaults.extensions } = handleOpts opts
-  handleFiles dir, fg.sync join dir, "**/*.(#{extensions.join '|'})"
+  handleFiles dir, fg.sync join dir, "**/*.{#{extensions.join ','}}"
 
 async = (opts) ->
   { dir, extensions = defaults.extensions } = handleOpts opts
-  handleFiles dir, await fg.async join dir, "**/*.(#{extensions.join '|'})"
+  handleFiles dir, await fg.async join dir, "**/*.{#{extensions.join ','}}"
 
 module.exports = { sync, async }
